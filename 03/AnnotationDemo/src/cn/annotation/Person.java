@@ -5,6 +5,7 @@ import java.lang.annotation.*;
 
 //@Role("USER")
 //@Role("ADMIN")
+@Roles({@Role("USER"),@Role("ADMIN")})
 public class Person extends Child{
 
     public static void main(String[] args) throws ClassNotFoundException {
@@ -16,8 +17,8 @@ public class Person extends Child{
     }
 }
 
-@Role("MAN")
-@Role("Child")
+//@Role("MAN")
+//@Role("Child")
 class Child{
 
 }

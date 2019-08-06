@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39469e5a-7621-43f9-bfb7-271572fe6ae2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/cn/annotation/AnnoBasic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/annotation/AnnoCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/annotation/AnnoDocDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/annotation/AnnoGet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/annotation/AnnoJdk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/annotation/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/annotation/CalculatorCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/annotation/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../02/ReflectDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../02/ReflectDemo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04/JDBCDemo/libs/mysql-connector-java-5.1.47-bin.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04/JDBCDemo/libs/okhttp-3.14.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04/JDBCDemo/src/cn/jdbc/demo/simpleDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnnotationDemo/cn/annotation/Child.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnnotationDemo/cn/annotation/Child.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnnotationDemo/cn/annotation/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnnotationDemo/cn/annotation/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/annotation/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/annotation/Person.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,101 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoDocDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoBasic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1102">
-              <caret line="97" column="3" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoGet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoJdk.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/annotation/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/JAVA/jdk1.8.0_181/src.zip!/java/lang/annotation/Repeatable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/annotation/Calculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-              <folding>
-                <element signature="e#86#87#0" expanded="true" />
-                <element signature="e#139#140#0" expanded="true" />
-                <element signature="e#177#178#0" expanded="true" />
-                <element signature="e#230#231#0" expanded="true" />
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#412#413#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-                <element signature="e#515#516#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoCheck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/annotation/CalculatorCheck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="418">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -160,10 +68,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1649" />
-    <option name="y" value="168" />
-    <option name="width" value="1714" />
-    <option name="height" value="947" />
+    <option name="x" value="513" />
+    <option name="y" value="46" />
+    <option name="width" value="1440" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -171,12 +79,49 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AnnotationDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnnotationDemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnnotationDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnnotationDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnnotationDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnnotationDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnnotationDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnnotationDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnnotationDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnnotationDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="Person.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -238,16 +183,16 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1649" y="168" width="1714" height="947" extended-state="0" />
+    <frame x="513" y="46" width="1440" height="780" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13603386" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14130434" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32894737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3868421" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22091062" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -256,6 +201,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.069528416" />
@@ -329,6 +275,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/JAVA/jdk1.8.0_181/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="4559" column="38" selection-start-line="4559" selection-start-column="38" selection-end-line="4559" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoDocDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -338,25 +291,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoBasic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
+        <state relative-caret-position="1843">
           <caret line="97" column="3" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/JAVA/jdk1.8.0_181/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="4559" column="38" selection-start-line="4559" selection-start-column="38" selection-end-line="4559" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoGet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        <state relative-caret-position="2280">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/JAVA/jdk1.8.0_181/src.zip!/java/lang/annotation/Repeatable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -373,47 +326,28 @@
     <entry file="file://$PROJECT_DIR$/src/cn/annotation/CalculatorCheck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/annotation/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-          <folding>
-            <element signature="e#86#87#0" expanded="true" />
-            <element signature="e#139#140#0" expanded="true" />
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="418">
+          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/annotation/AnnoJdk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="95">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/JAVA/jdk1.8.0_181/src.zip!/java/lang/annotation/Repeatable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/annotation/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="418">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
