@@ -15,7 +15,7 @@ public class JDBCUtils {
     private static String USER;
     private static String PASSWORD;
     /**
-     *静态代码块，在 JDBCUtils 仅在类加载时调用一次
+     *静态代码块，仅在 JDBCUtils 类加载时调用一次
      */
     static {
         try {
@@ -30,7 +30,7 @@ public class JDBCUtils {
             USER = pro.getProperty("user");
             PASSWORD = pro.getProperty("password");
             //注册驱动
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(pro.getProperty("driver"));
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

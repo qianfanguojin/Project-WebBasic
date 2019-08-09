@@ -1,4 +1,8 @@
-## 一. 数据库连接池
+---
+typora-root-url: ./
+---
+
+## 一. 使用数据库连接池
 
 ### 1. 什么是数据库连接池
 
@@ -12,9 +16,9 @@
 
 #### 2.1 传统的数据库连接方式
 
-每一个获取数据库连接对象的操作都需要从系统底层获取资源，申请资源是一件极度耗时的工作。
+每一个获取数据库连接对象的操作都需要从系统底层获取资源，申请资源又是一件极度耗时的工作。
 
-而每一次使用完这个数据库连接之后，我们又直接将资源释放给系统底层，下次使用还是要重新向系统申请资源。
+每一次使用完这个数据库连接之后，我们又直接将资源释放给系统底层，下次使用还是要重新向系统申请资源。
 
 这样来回反复，会浪费大量的时间以及系统资源。并且，当同时连接数据库的次数数量很大时，此时系统资源和时间都被消耗在数据库连接上，我们想要得到的数据库中的数据的时间就被延迟，这是非常影响用户的体验的。又因为每一次我们使用完数据库连接就要完全释放该连接，在大量的数据库连接中，程序如果出现异常，此时资源并没有完全释放，大量的连接资源没有及时释放，容易发生内存泄漏。
 
@@ -51,7 +55,7 @@
 
 说了这么多，我们还是来实践一下把，我们接下来就来手动实现一个简单的连接池。
 
-首先我们要确定我们实现的目标：
+首先我们要确定我们设计的连接池需要实现的目标：
 
 1. 一次性创建多个连接对象
 2. 新增连接对象
@@ -155,6 +159,13 @@ public class MyDataSourceTest {
 
 ```
 
+输出结果为：
+
+```java
+用户名：小明    密码：123456
+用户名：小李    密码：123456
+```
+
 
 
 ### 3. 开发中常用的数据连接池
@@ -178,7 +189,7 @@ public class MyDataSourceTest {
 
 大致意思就是 c3p0 使用很方便，将`c3p0-0.9.5.2.jar` 和`mchange-commons-java-0.2.15.jar`放到应用的环境变量中即可。
 
-这里就告诉我们需要导入两个包到我们的项目中，这两个包的下载地址分别为：
+这里就告诉我们需要导入上述两个包到我们的项目中。这两个包的下载地址分别为：
 
 [c3p0-0.9.5.2.jar](https://mvnrepository.com/artifact/com.mchange/c3p0/0.9.5.2)
 
@@ -210,7 +221,7 @@ cpds.setPassword("dbpassword");
 
 但是很明显，这样的写法有许多缺点。一是代码冗余性多，二是将来代码维护的时候非常麻烦，所以我们更推荐使用配置文件的模式。
 
-查看官方文档，再配置文件栏可以找到这句：
+查看官方文档，在配置文件栏可以找到这句：
 
 > Configuration files are normally looked up under standard names (`c3p0.properties` or `c3p0-config.xml`) at the top level of an application's classpath, but the XML configuration can be placed anywhere in an application's file system or classpath, if the system property [`com.mchange.v2.c3p0.cfg.xml`](https://www.mchange.com/projects/c3p0/#locating_configuration_information) is set.
 
@@ -257,9 +268,11 @@ cpds.setPassword("dbpassword");
 </c3p0-config>
 ```
 
-
+这样做完后，数据库连接池的配置文件就准备完成。
 
 ##### step3. 使用示例 
+
+配置文件配好了，那么我们就用一个简单的示例来体验一下吧。
 
 添加代码：
 
@@ -290,15 +303,19 @@ com.mchange.v2.c3p0.impl.NewProxyConnection@5fe5c6f [wrapping: com.mysql.jdbc.JD
 
 **注意：**
 
-> 在不传参情况下，`new ComboPooledDataSource()` 创建对象使用默认构造函数，此时使用的配置为配置文件中的 `default-config` ，但我们也可以在创建对象时传入参数指定配置：`new ComboPooledDataSource("mySource")` 则指定配置文件中名为`mySource` 的配置。
+> 在不传参情况下，`new ComboPooledDataSource()` 创建对象使用默认构造函数，此时使用的配置为配置文件中的 `default-config` ，但我们也可以在创建对象时传入参数指定配置：`new ComboPooledDataSource("mySource")` 则指定配置文件中名为`mySource` 的配置，这样我们可以方便的在使用不同的数据库时切换不同的配置。
 
 
 
 #### 3.2 使用Druid
 
+Druid 是阿里巴巴开源的一个高效的连接池实现，凭借其各方面优秀的特性，已经成为最热门的数据库连接池实现之一。
+
 官方文档：[https://github.com/alibaba/druid/wiki/%E9%A6%96%E9%A1%B5](https://github.com/alibaba/druid/wiki/首页)
 
-以后我们都推荐使用Druid来开发，接下来介绍Druid的使用。
+我们推荐使用Druid来使用数据库连接池。
+
+下面是其使用的简单步骤：
 
 
 ##### step1. 导入 jar 包
@@ -309,7 +326,7 @@ com.mchange.v2.c3p0.impl.NewProxyConnection@5fe5c6f [wrapping: com.mysql.jdbc.JD
 
 ##### step2. 使用配置文件
 
-在Druid官方文档的说明中， DataSource可配置的属性列表和说明如下：
+在Druid官方文档的说明中， DataSource连接池可配置的属性列表和说明如下：
 
 | 配置                                      | 缺省值               | 说明                                                         |
 | ----------------------------------------- | -------------------- | ------------------------------------------------------------ |
@@ -339,9 +356,9 @@ com.mchange.v2.c3p0.impl.NewProxyConnection@5fe5c6f [wrapping: com.mysql.jdbc.JD
 | filters                                   |                      | 属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有：<br />监控统计用的filter:stat<br />日志用的filter:log4j<br />防御sql注入的filter:wall |
 | proxyFilters                              |                      | 类型是List<com.alibaba.druid.filter.Filter>，如果同时配置了filters和proxyFilters，是组合关系，并非替换关系 |
 
-与上面的 C3P0 一样，这些属性也可以硬编码式的直接在代码里通过不同的 setXX() 方法设置，但不推荐，我们一般使用配置文件，在这里，我们需要使用 Java配置文件格式 properties 来配置相应的属性。
+与上面的 C3P0 一样，这些属性也可以硬编码式的直接在代码里通过不同的 setXX() 方法设置，但不推荐。我们都推荐使用配置文件的方式，在这里，我们需要使用 Java配置文件格式 properties 来配置相应的连接池属性。
 
-首先依旧是在 src 目录（可以任意目录下）下新建文件名为 druid.properties 的File文件，在里面填入一些必要的配置属性即可： 
+在 src 目录（也可以任意目录下）下，新建文件名为 druid.properties 的File文件，在里面填入一些必要的配置属性即可： 
 
 ```properties
 # 驱动位置
@@ -362,7 +379,9 @@ maxActive=10
 
 ##### step3. 使用示例
 
-一个简单使用示例如下：
+定义好配置文件后，我们同样使用一个简单示例来介绍使用方式：
+
+使用示例如下：
 
 ```java
 /**
@@ -402,7 +421,7 @@ com.mysql.jdbc.JDBC4Connection@42f93a98
 
 成功获取到了连接对象。
 
-
+具体的步骤解析注释中已经介绍的很清楚了，我就不再细述了。
 
 ## 二、设计结合了数据库连接池的工具类JDBCUtils
 
