@@ -1,3 +1,7 @@
+---
+typora-root-url: ./
+---
+
 ## 什么是单元测试
 
 在软件行业，测试方法大致分为两大类：
@@ -88,10 +92,6 @@ public class Calculator {
 
 对于开发人员来说，将测试代码和源代码分开是一个好习惯。对于测试类，我们在`src` 同级目录下新建`test`文件夹，专门用来放测试代码，接着在IntelliJ IDEA里还要把这个test文件夹要设置成测试文件的根目录，右键选中
 Mark Directory As - Test Sources Root。
-
-![](/Junit/02.png)
-
-
 
 建好目录之后，我们在同样在`test` 目录下新建一个与要测试的类相同的包`junit`。
 
