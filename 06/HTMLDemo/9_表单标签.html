@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+
+<!--form 用于将表单元素包裹起来，在form 包裹范围内会采集其中的表单元素的数据-->
+
+
+<!--简单示例-->
+<p>简单示例</p>
+<form>
+    账号：<input><br/>
+    密码：<input>
+</form>
+
+<hr/>
+
+<!--get post示例-->
+<p>Get Post 示例</p>
+<p>Get</p>
+<form method="get">
+
+    账号：<input name="username"><br/>
+    密码：<input name="password"><br/>
+         <input type="submit">
+</form>
+<p>Post</p>
+<form method="post">
+
+    账号：<input name="username"><br/>
+    密码：<input name="password"><br/>
+         <input type="submit">
+</form>
+
+<hr/>
+
+<!--input 元素类型解析-->
+<p>input 元素不同的类型示例</p>
+<form method="get">
+    账号:<input name="username" placeholder="请输入账号"><br/>
+    密码:<input type="password" name="password" placeholder="请输入密码"><br/>
+    <!--使用radio单选框时，选项的name属性必须一样-->
+
+    <p>默认勾选单选框中的性别为男，多选框中的爱好为学习</p>
+    性别:
+    <input type="radio" name="sex" checked>男
+    <input type="radio" name="sex">女<br/>
+    爱好:
+    <input type="checkbox" name="hobbies" checked>学习
+    <input type="checkbox" name="hobbies">努力学习
+    <input type="checkbox" name="hobbies">刻苦学习<br/>
+
+    <input type="submit">
+</form>
+<hr/>
+
+
+<!--label 标签示例-->
+<form>
+    <p>不使用label</p>
+    男：
+    <input type="radio" name="sex">
+    女：
+    <input type="radio" name="sex"><br/>
+
+
+    <p>使用label</p>
+    <label for="male">男：</label>
+    <input type="radio" name="sex" id="male">
+    <label for="female">女：</label>
+    <input type="radio" name="sex" id="female"><br/>
+
+</form>
+</body>
+</html>
