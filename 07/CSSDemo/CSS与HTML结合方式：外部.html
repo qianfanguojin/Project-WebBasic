@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外部样式方式</title>
+    <!-- 定义一个单独的CSS文件来放CSS代码，在head标签中使用link标签引入CSS资源文件，推荐使用。 -->
+    <!-- 作用域可以为所有的html文件 -->
+
+    <link rel="stylesheet" href="css/外部.css">
+
+    <!-- 也可以在style标签中使用@import来引入css文件,不推荐使用-->
+    <style>
+        @import "css/外部.css";
+    </style>
+</head>
+<body>
+    <p>外部样式示例</p>
+    <div>Hello</div>
+</body>
+</html>

@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="add77e50-217e-42b0-b256-45bb2567f3b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/5_链接标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6_块标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/7_语义化标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/8_表格标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9_表单标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/综合案例.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../05/DatabaseConnectionPoolDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../05/DatabaseConnectionPoolDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/9_表单标签.html" beforeDir="false" afterPath="$PROJECT_DIR$/9_表单标签.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/8_表格标签.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            <state relative-caret-position="300">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -68,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/9_表单标签.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="60" selection-start-line="60" selection-end-line="75" selection-end-column="7" />
+            <state relative-caret-position="262">
+              <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -111,8 +106,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="250" />
-    <option name="y" value="242" />
+    <option name="x" value="195" />
+    <option name="y" value="193" />
     <option name="width" value="1582" />
     <option name="height" value="702" />
   </component>
@@ -122,23 +117,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="HTMLDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HTMLDemo" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -155,7 +141,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.8_表格标签.html">
+  <component name="RunManager" selected="JavaScript Debug.9_表单标签.html">
     <configuration name="6_块标签.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HTMLDemo/6_块标签.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -170,9 +156,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.9_表单标签.html" />
         <item itemvalue="JavaScript Debug.8_表格标签.html" />
         <item itemvalue="JavaScript Debug.6_块标签.html" />
-        <item itemvalue="JavaScript Debug.9_表单标签.html" />
         <item itemvalue="JavaScript Debug.综合案例.html" />
       </list>
     </recent_temporary>
@@ -181,8 +167,7 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="250" y="242" width="1582" height="702" extended-state="0" />
-    <editor active="true" />
+    <frame x="195" y="193" width="1582" height="702" extended-state="0" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Favorites" side_tool="true" />
@@ -225,13 +210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/9_表单标签.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="60" selection-start-line="60" selection-end-line="75" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/7_语义化标签.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -248,8 +226,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/8_表格标签.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="300">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/9_表单标签.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
         </state>
       </provider>
     </entry>
