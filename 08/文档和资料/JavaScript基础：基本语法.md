@@ -21,7 +21,7 @@ JavaScript 的基本语法和基本对象等都是来自于 ECMAScript 的 ,可�
 
 
 
-## 基本语法
+## 基本语法介绍
 
 JavaScript的语法和Java由许多近似之处，所以如果你是一个有过Java基础的同学，学起来其实并不会很累。
 
@@ -82,7 +82,7 @@ JavaScript的语法和Java由许多近似之处，所以如果你是一个有过
 1. `<script>`标签的声明可以在html的任何位置，包括`<html></html>`标签外。
 2. `<script>`标签声明的位置会影响 js 代码执行的时刻。js代码的执行和html元素的渲染是在同一个序列中，在html的解析中，碰到`<script>`标签就会去执行。
 3. `<script>`标签声明在`<html></html>`标签外时，浏览器会优先执行该`<script>`标签中的内容。
-4. 当我们要使用 js 修改 html 元素时，我们应将 js 代码声明在`<html></html>`标签内且在最下方，这个位置代表前面的html元素已经渲染完成，此时修改html元素才为最佳。
+4. 在默认情况下，当我们要使用 js 修改 html 元素时，我们应将 js 代码声明在`<html></html>`标签内且在最下方，这个位置代表前面的html元素已经渲染完成，此时修改html元素才为最佳。
 
 
 
@@ -158,7 +158,7 @@ str = 111;
 
 #### 3.3 JavaScript变量
 
-在JavaScript中，由于JavaScript为弱类型语言，变量定义无需指定数据类型，统一用`var`来表示。定义一个变量的语法格式为：
+在JavaScript中，由于JavaScript为弱类型语言，变量定义不指定数据类型，统一用`var`关键字来定义。定义一个变量的语法格式为：
 
 ```javascript
 var 变量名 = 初始化值;
@@ -167,7 +167,8 @@ var 变量名 = 初始化值;
 下面是相应数据类型的变量定义：
 
 ```javascript
-        //定义 number 数字类型 ，包括整数，小数 ，以及一个特殊数NaN(Not a Number : 不是数字)。
+<script>
+				//定义 number 数字类型 ，包括整数，小数 ，以及一个特殊数NaN(Not a Number : 不是数字)。
         var num1 = 123;
         var num2 = 1.2;
         var num3 = NaN;
@@ -185,11 +186,12 @@ var 变量名 = 初始化值;
         var obj1 = null;
 
         //定义undefined 当变量定义时没有默认值，变量的数据类型为undefined，变量值为undefined
-        var ud1;
+        var ud1 = undefined;
         var ud2;
+</script>
 ```
 
-也可以使用`document`对象将这些变量打印到网页上：
+也可以使用`document`对象将这些变量打印到网页上，在代码中添加：
 
 ```javascript
 				//使用document对象中的write方法将变量逐个输出网页上显示
@@ -212,9 +214,9 @@ var 变量名 = 初始化值;
 
 #### 3.4 使用typeof运算符判断变量的数据类型
 
-在刚才的示例中，我们知道，JavaScript的变量都由`var`关键字进行定义，而且变量可以赋值为多种数据类型，但是这样的定义就出现了一个问题：
+在刚才的示例中，我们知道，JavaScript为弱类型语言，变量的定义声明都使用`var`关键定，而且变量可以自由变换为多种数据类型，变量的使用变的非常的简便。但是这样的设定存在一个问题：
 
-在Java中，我们定义不同数据类型的变量时要使用不同关键字，如字符串使用String，整型使用 int，这样我们在使用时可以很轻松的知道某个变量的数据类型。
+在Java中，我们定义不同数据类型的变量时要使用不同的关键字，如字符串使用String，整型使用 int，这样我们在使用时可以很清楚的知道某个变量的数据类型。
 
 而在JavaScript中，定义变量时并不指定数据类型，都使用 `var` 关键字，我们无法直接判断出某个变量的数据类型。
 
@@ -239,12 +241,18 @@ typeof(变量名);
         document.write(bol1 + "--数据类型：" + typeof(bol1) + "<br/>");
         document.write(bol2 + "--数据类型：" + typeof(bol2) + "<br/>");
         document.write(obj1 + "--数据类型：" + typeof(obj1) + "<br/>");
-        document.write(ud1 + "--数据类型：" + typeof(obj1) + "<br/>");
-        document.write(ud2 + "--数据类型：" + typeof(obj1) + "<br/>");
+        document.write(ud1 + "--数据类型：" + typeof(ud1) + "<br/>");
+        document.write(ud2 + "--数据类型：" + typeof(ud2) + "<br/>");
 ```
 
 输出结果为：
 
 ![](./JavaScript02/3.3-02.png)
 
-可以看到每个变量的数据类型都对应相应的名称，但是
+可以看到每个变量的数据类型都对应相应的名称，但是注意一个变量值null，其使用**typeof**得出的是object (对象) 数据类型。但是我们在前面提过 null 和 undefined 一样，是一种原始数据类型，null值对应的数据类型应该是 `nul`l。 
+
+要解释这个问题比较复杂，其实这是 JavaScript在设计之初的一个Bug，下面引用 W3C 对这个问题的解释：
+
+> **注释：**您也许会问，为什么 typeof 运算符对于 null 值会返回 "Object"。这实际上是 JavaScript 最初实现中的一个错误，然后被 ECMAScript 沿用了。现在，null 被认为是对象的占位符，从而解释了这一矛盾，但从技术上来说，它仍然是原始值。
+
+也就是说 null 依旧是一种数据类型，可以理解为对象 Object 数据类型包括了 null 数据类型，null值作用与对象，表示对象为空。
