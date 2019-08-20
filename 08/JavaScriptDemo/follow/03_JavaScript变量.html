@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变量</title>
+
+    <script>
+        //定义 number 数字类型 ，包括整数，小数 ，以及一个特殊数**NaN**(Not a Number : 不是数字)。
+        var num1 = 123;
+        var num2 = 1.2;
+        var num3 = NaN;
+        
+        //定义 string  字符串类型。包括字符/字符串 ，声明时使用 "123" 和 '123' 都是可行的。
+        var str1 = "a"
+        var str2 = "abc";
+        var str3 = 'abc';
+
+        //定义 boolean  布尔类型。 true 或 false
+        var bol1 = true;
+        var bol2 = false;
+
+        //定义 null 
+        var obj1 = null;
+
+        //定义 undefined 当变量定义时没有指定默认值，变量的数据类型为undefined
+        var ud1;
+        var ud2;
+
+        //使用domcument对象中的write方法将变量逐个输出网页上显示
+        // document.write(num1 + "<br/>");
+        // document.write(num2 + "<br/>");
+        // document.write(num3 + "<br/>");
+        // document.write(str1 + "<br/>");
+        // document.write(str2 + "<br/>");
+        // document.write(str3 + "<br/>");
+        // document.write(bol1 + "<br/>");
+        // document.write(bol2 + "<br/>");
+        // document.write(obj1 + "<br/>");
+        // document.write(ud1 + "<br/>");
+        // document.write(ud2 + "<br/>");
+        
+        //使用document对象中的write方法逐个输出网页上显示，同时显示它们对应的数据类型
+        document.write(num1 + "--数据类型：" + typeof(num1) + "<br/>");
+        document.write(num2 + "--数据类型：" + typeof(num2) + "<br/>");
+        document.write(num3 + "--数据类型：" + typeof(num3) + "<br/>");
+        document.write(str1 + "--数据类型：" + typeof(str1) + "<br/>");
+        document.write(str2 + "--数据类型：" + typeof(str2) + "<br/>");
+        document.write(str3 + "--数据类型：" + typeof(str3) + "<br/>");
+        document.write(bol1 + "--数据类型：" + typeof(bol1) + "<br/>");
+        document.write(bol2 + "--数据类型：" + typeof(bol2) + "<br/>");
+        document.write(obj1 + "--数据类型：" + typeof(obj1) + "<br/>");
+        document.write(ud1 + "--数据类型：" + typeof(obj1) + "<br/>");
+        document.write(ud2 + "--数据类型：" + typeof(obj1) + "<br/>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
