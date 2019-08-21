@@ -489,5 +489,45 @@ false
 6
 ```
 
+#### 4.6 流程控制语句
 
+共有以下五种：
 
+- if....else
+- switch
+- while
+- do...while
+- for
+
+特别注意这里的 switch 语句，在Java中，switch语句可以接受的数据类型是有限制的：byte、int、short、char、enum(jdk1.5)、String(jdk1.7)。而在JavaScript中，switch可以接受任意的原始数据类型。
+
+一个简单的例子：
+
+```javascript
+<script>
+        //您可以通过变换不同的 a 值来测试
+        var a = "abc";
+        switch (a) {
+            case 1:
+                document.write("整型");    
+                break;
+            case "abc":
+                document.write("字符串");    
+                break;
+            case true:
+                document.write("布尔型");    
+                break;  
+            case null:
+                document.write("null");    
+                break;
+            case undefined:
+                document.write("undefined");
+                break;                         
+            default:
+                document.write("默认");
+                break;
+        }
+</script>
+```
+
+除switch外，JavaScript中其余的流程控制语句和 Java 并无区别，这里就不再细述。
