@@ -256,3 +256,238 @@ typeof(变量名);
 > **注释：**您也许会问，为什么 typeof 运算符对于 null 值会返回 "Object"。这实际上是 JavaScript 最初实现中的一个错误，然后被 ECMAScript 沿用了。现在，null 被认为是对象的占位符，从而解释了这一矛盾，但从技术上来说，它仍然是原始值。
 
 也就是说 null 依旧是一种数据类型，可以理解为对象 Object 数据类型包括了 null 数据类型，null值作用与对象，表示对象为空。
+
+### 4. JavaScript常用运算符
+
+#### 4.1 一元运算符
+
+- 自增运算符 `++` ，自减运算符`--`和Java相同。
+
+- 正负号：`+(-)`。正负号只有数据类型为数字number类型时才有意义，如果将正负号运算符放在非number数据类型之前，则需要进行类型转换。
+
+  一些类型转number的介绍：
+
+  - string 转number：按照字面值转换，如果字面值不是数字，则转为NaN。如字符串"123"转为123，字符串"123ab"则转为NaN。
+  - boolean 转number：true 值转为 1 ，false 转为 0
+
+#### 4.2 算数运算符
+
+和Java一样，JavaScript的算数运算符的用法基本相同：
+
+- 算数运算符加： `+` 
+- 算数运算符减： `-`
+- 算数运算符乘： `*`
+- 算数运算符除： `/`。这里注意，在JavaScript中，由于number数据类型可以表示为整数以及小数，所以在执行除法时结果会有小数。如 5/2，结果为2.5。
+- 算数运算符取余： `%`
+
+#### 4.3 比较运算符
+
+在JavaScript中，比较运算符的类型和其他语言差不多，它们分别是：
+
+- 比较运算符大于&大于等于：`>`
+- 比较运算符小于&小于等于：`<`
+- 比较运算符等于：`==`
+- 比较运算符不等于：`!=`
+- 比较运算符**全等于**：`===`
+
+比较运算符的类型和其他语言差不多，不过要注意JavaScript中特有的`===`**全等于**比较运算符，稍后我们会给到解释。现在我们先来介绍一下在JavaScript中运算符作用的两种情况：
+
+1. 比较的数据类型相同：直接比较。
+
+   这里就不过多解释了，直接上示例：
+
+   ```javascript
+       <script>       
+           /*
+           比较运算符，类型相同
+           */
+           document.write((1 > 3) + "<br/>"); //false
+           document.write((2 > 1) + "<br/>"); // true
+           document.write((1 == 1) + "<br/>"); // true
+   
+           // 字符串在进行比较时按字典顺序比较
+           // 按位逐一比较，直到得出大小
+           document.write(("123" > "121") + "<br/>"); //true
+           document.write(("abc" > "abd") + "<br/>"); //false
+           document.write(("abc" < "abd") + "<br/>"); //true
+       </script>
+   ```
+
+   结果：
+
+   ```javascript
+   false
+   true
+   true
+   true
+   false
+   true
+   ```
+
+   
+
+2. 比较的数据类型不同：先进行类型转换，在进行比较。
+
+   同样给出示例：
+
+   ```javascript
+   <script>				
+   				/*
+           比较运算符，类型不同
+           */
+           //字符串和数字比较，字符串转为数字类型再进行比较
+           document.write(("123" == 123) + "<br/>");//true
+           document.write(("123" > 123) + "<br/>"); //false
+           //全等于运算符"===",再比较之前，先判断两边的数据类型，如果类型不同，直接返回fals
+           //字符串和数字类型不同，返回false
+           document.write(("123" === 123) + "<br/>"); //false     
+   </script>
+   ```
+
+   结果：
+
+   ```javascript
+   true
+   false
+   false
+   ```
+
+   
+
+#### 4.4 逻辑运算符
+
+JavaScript中的逻辑运算符类型：
+
+- 逻辑运算符与： `&` ,短路 `&&`。
+- 逻辑运算符或：`|`,短路 `||`。
+- 逻辑运算符非：`!`。
+
+##### 运算数类型的自动转换
+
+在Java中，逻辑运算符两边的数据类型必须为 boolean 类型才能进行逻辑运算，例如：
+
+```java
+				//可以，a>b 和 a<b 返回的都是boolean值
+        int a = 1;
+        int b = 2;
+        if((a>b) && (a<b)){
+
+        }
+        //报错，两个整型值进行逻辑运算
+        if(a && b) {
+
+        }
+```
+
+
+
+而在JavaScript中，逻辑运算符两边的数据类型可以**不仅限于boolean类型**；在进行运算时，如果某个运算数不是boolean类型，运算数则会参照下表规则转为相应的boolean类型：
+
+| 运算数类型 | 结果                                                    |
+| ---------- | ------------------------------------------------------- |
+| Undefined  | false                                                   |
+| Null       | false                                                   |
+| Boolean    | 结果等于输入的参数（不转换）                            |
+| Number     | 如果参数为 +0, -0 或 NaN，则结果为 false；否则为 true。 |
+| String     | 如果参数为空字符串，则结果为 false；否则为 true。       |
+| Object     | true                                                    |
+
+示例：
+
+```javascript
+<script>
+				/*
+        逻辑运算符，运算符类型不同时的相互转换
+        */
+        //null转为false
+        document.write((!!(null)) + "<br/>"); //false
+        //undefined转为false
+        document.write((!!(undefined)) + "<br/>"); //false
+        //number数据类型：0 或 NaN 为false，大于0为true
+        document.write(!!(0) + "<br/>"); //false
+        document.write(!!(NaN) + "<br/>"); //false
+        document.write(!!(1) + "<br/>"); //true
+        //string数据类型：空字符串 ""为false，其余都为true
+        document.write(!!("") + "<br/>"); //false
+        document.write(!!("a") + "<br/>"); //true
+        //Object对象数据类型：除了对象为空(null),其余都为true
+        var obj = new Date();
+        document.write((!!(obj)) + "<br/>"); //true
+        obj = null;
+        document.write((!!(obj)) + "<br/>"); //false
+</script>
+```
+
+结果：
+
+```javascript
+false
+false
+false
+false
+true
+false
+true
+true
+false
+```
+
+##### 逻辑运算符的返回值区别
+
+<span style="color:red">不同于Java，在JavaScript中，只有逻辑运算符`!` 返回值才一定是boolean类型。逻辑运算符`&&` 和 `||`运算符并不一定返回 boolean 类型的值，而是会返回一个指定操作数的值。</span>
+
+逻辑运算符`!`的规则如下：
+
+- 如果运算数是对象，返回 false  
+- 如果运算数是数字 0，返回 true  
+- 如果运算数是 0 以外的任何数字，返回 false  
+- 如果运算数是 null，返回 true  
+- 如果运算数是 NaN，返回 true  
+- 如果运算数是 undefined，发生错误 
+
+逻辑运算符`&&`的规则如下：
+
+- 如果一个运算数是对象，另一个是 Boolean 值，返回该对象。  
+- 如果两个运算数都是对象，返回第二个对象。  
+- 如果某个运算数是 null，返回 null。  
+- 如果某个运算数是 NaN，返回 NaN。  
+- 如果某个运算数是 undefined，发生错误。
+
+逻辑运算符`||`的规则如下：
+
+- 如果一个运算数是对象，并且该对象左边的运算数值均为 false，则返回该对象。  
+- 如果两个运算数都是对象，返回第一个对象。  
+- 如果最后一个运算数是 null，并且其他运算数值均为 false，则返回 null。  
+- 如果最后一个运算数是 NaN，并且其他运算数值均为 false，则返回 NaN。  
+- 如果某个运算数是 undefined，发生错误。 
+
+<span style="color:red">但是，尽管 `&&` 和 `||` 运算符能够返回非布尔值的操作数, 但它们依然可以被看作是布尔操作符，因为它们的返回值总是能够被转换为布尔值。如果要显式地将它们的返回值（或者表达式）转换为布尔值，请使用双重非运算符（即`!!`）或者Boolean构造函数。</span>
+
+#### 4.5 三元运算符
+
+语法格式：
+
+```javascript
+表达式 ? 值1:值2
+```
+
+例子：
+
+```javascript
+<script>
+				/*
+        三元运算符
+        */
+        // 解释：1大于2吗？，大于返回5，不大于则返回6
+        document.write(1>2 ? 5 : 6);//返回6
+</script>
+```
+
+结果：
+
+```javascript
+6
+```
+
+
+

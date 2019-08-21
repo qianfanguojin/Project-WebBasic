@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运算符</title>
+    <script>
+        
+        /*
+        比较运算符，类型相同
+        */
+        document.write((1 > 3) + "<br/>"); //false
+        document.write((2 > 1) + "<br/>"); // true
+        document.write((1 == 1) + "<br/>"); // true
+
+        // 字符串在进行比较时按字典顺序比较
+        // 按位逐一比较，直到得出大小
+        document.write(("123" > "121") + "<br/>"); //true
+        document.write(("abc" > "abd") + "<br/>"); //false
+        document.write(("abc" < "abd") + "<br/>"); //true
+
+        document.write("<hr/>");
+
+        /*
+        比较运算符，类型不同
+        */
+        //字符串和数字比较，字符串转为数字类型再进行比较
+        document.write(("123" == 123) + "<br/>");//true
+        document.write(("123" > 123) + "<br/>"); //false
+        //全等于运算符"===",再比较之前，先判断两边的数据类型，如果类型不同，直接返回fals
+        //字符串和数字类型不同，返回false
+        document.write(("123" === 123) + "<br/>"); //false        
+
+        document.write("<hr/>");
+        
+        /*
+        逻辑运算符，运算符类型不同时的相互转换
+        */
+        //null转为false
+        document.write((!!(null)) + "<br/>"); //false
+        //undefined转为false
+        document.write((!!(undefined)) + "<br/>"); //false
+        //number数据类型：0 或 NaN 为false，大于0为true
+        document.write(!!(0) + "<br/>"); //false
+        document.write(!!(NaN) + "<br/>"); //false
+        document.write(!!(1) + "<br/>"); //true
+        //string数据类型：空字符串 ""为false，其余都为true
+        document.write(!!("") + "<br/>"); //false
+        document.write(!!("a") + "<br/>"); //true
+        //Object对象数据类型：除了对象为空(null),其余都为true
+        var obj = new Date();
+        document.write((!!(obj)) + "<br/>"); //true
+        obj = null;
+        document.write((!!(obj)) + "<br/>"); //false
+
+
+        document.write("<hr/>");
+        /*
+        三元运算符
+        */
+        // 解释：1大于2吗？，大于返回5，不大于则返回6
+        document.write(1>2 ? 5 : 6);//返回6
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
