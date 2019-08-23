@@ -4,24 +4,11 @@
 
 目前我们所用的 JavaScript 是由三部分内容组成的：**ECMAScript(标准) + DOM(文档对象) +BOM(浏览器对象)**。 
 
-JavaScript 的基本语法和基本对象等都是来自于 ECMAScript 的 ,可以说 ECMAScript是JavaScript的一部分。
+JavaScript 的基本语法和基本对象等都是来自于 ECMAScript 的 ,可以说 ECMAScript是JavaScript的核心部分。
 
-在学习 JavaScript时，我们先从ECMAScript中开始讲起。
+在学习 JavaScript 时，我们先从ECMAScript中开始讲起，也就是JavaScript的核心部分：基本语法和基本对象。
 
-在ECMAScript中，主要包含以下内容：
-
-1. 基本语法
-   - 与html的结合方式。
-   - 注释使用方式。
-   - 数据类型。
-   - 变量。
-   - 运算符。
-   - 流程控制语句。
-2. 基本对象
-
-
-
-## 基本语法介绍
+## JavaScript基本语法
 
 JavaScript的语法和Java由许多近似之处，所以如果你是一个有过Java基础的同学，学起来其实并不会很累。
 
@@ -80,7 +67,7 @@ JavaScript的语法和Java由许多近似之处，所以如果你是一个有过
 <span style="color:red">**注意事项：**</span>
 
 1. `<script>`标签的声明可以在html的任何位置，包括`<html></html>`标签外。
-2. `<script>`标签声明的位置会影响 js 代码执行的时刻。js代码的执行和html元素的渲染是在同一个序列中，在html的解析中，碰到`<script>`标签就会去执行。
+2. `<script>`标签声明的位置会影响 js 代码执行的时刻。js代码的执行和html元素的渲染是在同一个序列中，而html的解析是从上到下的，所以要注意`<script>`标签放置的位置。
 3. `<script>`标签声明在`<html></html>`标签外时，浏览器会优先执行该`<script>`标签中的内容。
 4. 在默认情况下，当我们要使用 js 修改 html 元素时，我们应将 js 代码声明在`<html></html>`标签内且在最下方，这个位置代表前面的html元素已经渲染完成，此时修改html元素才为最佳。
 

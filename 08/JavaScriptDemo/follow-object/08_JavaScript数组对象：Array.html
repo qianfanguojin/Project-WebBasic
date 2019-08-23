@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array对象</title>
+    <script>
+        /* 
+        01.三种创建数组的方式
+        */
+        //1.使用new 关键字创建一个Array对象创建一个空的数组
+        var arr = new Array();
+        //2.使用new 关键字创建一个Array对象来创建一个数组，传入元素列表
+        var arr1 = new Array(2,0,8);
+        //3.用 new 关键字一个Array对象来创建数组，传入默认长度
+        var arr2 = new Array(5);
+        //4.直接定义元素列表创建数组。
+        var arr3 = [9,5,0];
+        //打印
+        document.write(arr + "<br/>");
+        document.write(arr1 + "<br/>");
+        document.write(arr2 + "<br/>");
+        document.write(arr3 + "<br/>");
+
+
+        /*
+        02.数组元素访问
+        */
+        var arr4 = new Array(10,20,30,40);
+        document.write(arr4[0] + ",");
+        document.write(arr4[1] + ",");
+        document.write(arr4[2] + ",");
+        document.write(arr4[3] + ",");
+        document.write("<br/>");
+        /*
+        03.数组元素类型可多种
+        */
+        var arr5 = new Array(10,"10",true);
+        document.write(arr5[0] + ",");
+        document.write(arr5[1] + ",");
+        document.write(arr5[2]);
+        document.write("<br/>");
+
+        /*
+        04.数组长度可变
+            注意：在直接访问超过范围的数组元素时，如该元素未赋值，此时数组的长度不变
+        */
+        //定义两个元素的数组
+        var arr6 = new Array(66,99);
+        document.write(arr6[0] + ",");
+        document.write(arr6[1] + ",");
+        //可以直接访问第12个元素，但是由于该元素未指定值，所以打印为 undefined
+        document.write(arr6[11] + ","); 
+        //未赋值时长度不变,不包括该元素，输出2
+        document.write(arr6.length); 
+
+        //指定值后打印真实值
+        arr6[11] = 999;
+        document.write(arr6[11] + ",");
+        //此时的数组长度length也变为12
+        document.write(arr6.length); 
+
+        document.write("<br/>");
+
+        /*
+        05.数组的属性
+        */
+        var arr7 = [1,3,5,7,9];
+        document.write(arr7.length);
+        document.write("<br/>");
+
+        /*
+        06.数组的常用方法
+        */
+        //1.join()方法，把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔，返回该字符串。
+        var arr7 = [2,4,6,8,10];
+        //不指定参数，默认分隔符为","
+        document.write(arr7.join() + "<br/>");
+        //可以指定多种类型的参数作为分隔符
+        document.write(arr7.join(0) + "<br/>");
+        document.write(arr7.join(">") + "<br/>");
+        document.write(arr7.join(null) + "<br/>");
+
+        document.write("<br/>");
+
+        //2.push()方法，向数组的末尾添加一个或多个元素，并返回新的长度。
+        var arr7 = ["p","u","s","h"];
+        document.write(arr7 + "<br/>");
+        //可同时添加多个元素,返回添加元素后数组的长度
+        document.write(arr7.push("p","o","p") + "<br/>");
+        document.write(arr7);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

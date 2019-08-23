@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date对象</title>
+
+    <script>
+        /*
+        01.创建Date对象
+        */
+        var date = new Date();
+        /*
+        02.相关方法
+        */
+        //1.toLocaleString()方法，返回当前date对象对应的时间本地字符串格式
+        var date1 = new Date();
+        document.write(date1 + "<br/>");
+        document.write(date1.toLocaleString() + "<br/>");
+        
+        //2.getTime()方法，返回当前时间距离1970年1月1日0点的毫秒数。
+        var date2 = new Date();
+        document.write(date2.getTime() + "<br/>");
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

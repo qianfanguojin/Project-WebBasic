@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math对象</title>
+
+    <script>
+        /*
+        01.创建Math对象
+            不用使用new关键字实例化，直接通过Math.方法名调用
+        */
+        
+        
+        /*
+        02.Math属性
+        */
+        //返回PI值
+        
+        document.write(Math.PI + "<br/>");
+        
+        
+        /*
+        03.相关方法
+        */
+        //1.random()方法，返回一个 0 ~ 1 之间的随机数，含0不含1。
+     
+        document.write(10*Math.random() + "<br/>");
+        
+        //2.ceil()方法，向上取整计算，返回的是大于或等于函数参数，并且与之最接近的整数。
+        //返回大于3.3最接近的整数
+        document.write(Math.ceil(3.3) + "<br/>");
+
+        //3.floor()方法，向下取整运算，返回的是小于或等于函数参数，并且与之最接近的整数。
+        //返回小于 5.3 且与之最接近的整数
+        document.write(Math.floor(5.3) + "<br/>");
+
+        //4.round()方法，四舍五入取整运算。
+        //返回 7.3 经过四舍五入运算后的整数值
+        document.write(Math.round(7.3) + "<br/>");
+        
+        /*
+        03.小测验，输出1-100（不包括100）内的随机整数
+        */
+        //1.使用random()方法获取 0 ~ 99.9999... 的随机数
+        var num = 100*Math.random();
+        //2.使用ceil()方法向上取整，去除小数，得到0 ~ 99（包括） 的整数。
+        num = Math.ceil(num);
+        //3.对结果加 1 ，得到 1 ~ 99（包括99） 
+        num += 1;
+        document.write(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
