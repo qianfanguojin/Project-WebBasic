@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+
+    <script>
+        /*
+        01.匹配单个字符
+        */
+        var str = "QIANFANGUOJIN";
+        var reg = /[A-Z]/;
+        var result = reg.test(str);
+        document.write(result + "<br/>"); //true
+
+
+        /*
+        02.开始结束符
+            ^ 规定匹配的字符串必须以该字符后的字符串开头
+            $ 规定匹配的字符串必须以该字符前的字符串结尾
+            ^$结合 规定匹配的字符串必须是^ 和 $ 之间的匹配条件所产生的字符串
+         */
+        document.write("开始结束符<br/>");
+        //测试^字符功能
+        var str1 = "QIANFANGUOJQI";
+        var str2 = "QI ANFANGUOJIN"
+        //规定必须是以QIAN字符串开头，即使是空格也不允许
+        var reg1 = /^QIAN/;
+        var result1 = reg1.test(str1);
+        var result2 = reg1.test(str2);
+        document.write(result1 + "<br/>"); //true
+        document.write(result2 + "<br/>"); //false
+        
+        //测试$字符功能
+        document.write("测试$字符功能<br/>");
+        var str3 = "QIANFANGUOJING";
+        var str4 = "QIANFANGUOJI NG"
+        //规定必须是以JING字符串结尾，即使是空格也不允许,空格也是字符
+        var reg2 = /JING$/;
+        var result3 = reg2.test(str3);
+        var result4 = reg2.test(str4);
+        document.write(result3 + "<br/>"); //true
+        document.write(result4 + "<br/>"); //false
+
+        //测试^$结合的功能
+        document.write("测试^$结合的功能<br/>");        
+        var str5 = "FANG";
+        var str6 = "QIANFANGUOJING"
+        //规定字符串的内容必须是 ^ 和 $ 字符串之间的内容
+        var reg3 = /^FANG$/;
+        var result5 = reg3.test(str5);
+        var result6 = reg3.test(str6);
+        document.write(result5 + "<br/>"); //true
+        document.write(result6 + "<br/>"); //false
+
+        //exec()方法，寻找指定字符串
+        document.write("exec()方法，寻找指定字符串<br/>");        
+        var str7 = "apple";
+        var reg4 = /app/;
+        var result7 = reg4.exec(str7);
+        document.write(result7 + "<br/>"); //app
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
