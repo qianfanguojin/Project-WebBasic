@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function方法对象</title>
+
+    <script>
+        /*
+        01. 创建方式
+        */
+        document.write("方法创建方式<br/>");        
+        //1.new 一个Function对象，传入形式参数列表和方法体(不推荐)
+        var fun_new = new Function("a","b","alert(a)");
+        fun_new(1,3);
+
+        //2. function 方法名称(形式参数列表){方法体}
+        function fun_name(a,b){
+            document.write(a + "<br/>");
+        }
+        fun_name(2,3);//输出2
+
+        //3. var 方法名 = function(){方法体}
+        var fun_name2 = function (a, b) {
+            document.write(a + "<br/>");
+        }
+        fun_name2(3,4);//输出3
+
+
+
+        /*
+        02. 方法调用
+        */
+        document.write("方法调用方式<br/>");        
+        //定义一个加法的方法
+        var fun = function(x,y){
+            return x + y;
+        }
+        //调用方法
+        var result = fun(1,3);
+        document.write(result + "<br/>");//输出4
+
+      
+                   
+        /*
+        03.方法的特点
+        */
+        document.write("方法的特点<br/>");   
+        //1. JavaScript中函数定义时参数不使用var 关键字。
+        //不使用var
+        var fun_novar = function(a,b){
+                //函数体
+        }
+
+        //2. 如果定义了多个相同名称的函数，后面的函数会覆盖前面的函数定义，只会存在一个真正可用函数实例。
+        var fun_same = function(){
+            document.write("same_front" + "<br/>");
+        }
+
+        var fun_same = function(){
+            document.write("same_back" + "<br/>");
+        }
+        fun_same(); //输出same_back
+        /*
+        04.方法的属性
+        */
+        document.write("方法的属性<br/>");        
+        var fun_attr = function(a,b,c){
+
+        }
+        var len = fun_attr.length;
+        document.write(len + "<br/>");//输出3
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

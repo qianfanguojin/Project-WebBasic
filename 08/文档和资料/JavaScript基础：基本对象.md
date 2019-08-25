@@ -16,8 +16,6 @@ Array 对象用于在单个的变量中存储多个值，也称数组。
    var arr = new Array();
    ```
 
-   
-
 2. 使用 new 关键字创建一个Array对象来创建一个数组，同时传入元素列表。
 
    ```javascript
@@ -510,11 +508,128 @@ Math.random();
 
 #### 5.1 全局对象中的一些方法
 
-1. encodeURI()
+---
 
-   功能：对URL进行编码
+### 6. Function函数对象
 
+Function对象用于描述一个函数（方法）
+
+在Java中，方法（函数）存在于类中，创建对象后是对象的一部分。而在JavaScript中，函数就是一个对象。
+
+#### 6.1 函数的创建方式&调用
+
+在JavaScript中，创建一个函数一共有三种方式：
+
+1. new 一个Function对象，传入形式参数列表和函数体(不推荐)
+
+   ```javascript
+   var fun_new = new Function("a","b","alert(a)");
+   ```
+
+2. function 函数名称(形式参数列表){函数体}
+
+   ```javascript
+   function fun_name(a,b){
+       alert(a);
+   }
+   ```
+
+3. var 函数名 = function(){函数体}
+
+   ```javascript
+   var fun_name2 = function (a, b) {
+   		alert(a);
+   }
+   ```
+
+要使用某个函数其实也很简单，和其他语言没有多大区别，使用 `方法名(参数列表)`调用即可。
+
+如：
+
+```javascript
+//定义一个加法的方法
+var fun = function(x,y){
+		return x + y;
+}
+//调用方法
+var result = fun(1,3);
+
+
+/*
+结果为4
+*/
+```
+
+
+
+#### 6.2 函数的特点
+
+1. JavaScript中函数定义时参数不使用 var 关键字。
+
+   在Java中，我们定义一个方式时如果需要参数，那么在定义参数时必须指定数据类型，如：
+
+   ```java
+   public void toLearn(String name, String age){//参数必须使用关键字定义
+   			//方法体
+   }
+   ```
+
+   但是在JavaScript中，由于其弱类型语言的特性，在定义函数时，可以不必使用 var 关键字修饰，如果你加了var 还会报错：
+
+   ```javascript
+   //不使用var
+   var fun_novar = function(a,b){
+   		//函数体
+   }
+   //使用var，会报错
+   var fun_var = function(var a,var b){
+   		//函数体
+   }
+   ```
+
+2. JavaScript的函数是一个对象，对象又是一种变量，和变量的定义特点一样，如果定义了多个相同名称的函数，后面的函数会覆盖前面的函数定义，只会存在**一个**真正可用函数实例。
+
+   ```javascript
+   <script>
+   				var fun_same = function(){
+               document.write("same_front" + "<br/>");
+           }
    
+           var fun_same = function(){
+               document.write("same_back" + "<br/>");
+           }
+           fun_same(); 
+   </script>
+   
+   /*
+   输出same_back
+   */
+   
+   ```
 
+3. **在JavaScript中，函数的调用只与方法的名称有关，和参数列表无关(重要)**
 
+   在Java等语言中，方法（函数）
 
+#### 6.3 函数的属性
+
+length：代表形参的个数
+
+示例：
+
+```javascript
+<script>
+var fun_attr = function(a,b,c);
+var len = fun_attr.length;
+document.write(len + "<br/>");
+</script>
+/*
+输出结果为3
+*/
+```
+
+从这里我们更可以看出JavaScript中的函数是对象了，因为它有自己的属性。
+
+ 
+
+ 
