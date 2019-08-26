@@ -508,6 +508,11 @@ Math.random();
 
 #### 5.1 全局对象中的一些方法
 
+1. encodeURI()。
+2. decodeURI()。
+3. encodeURIComponent()。
+4. decodeURIComponent()。
+
 ---
 
 ### 6. Function函数对象
@@ -564,9 +569,9 @@ var result = fun(1,3);
 
 #### 6.2 函数的特点
 
-1. JavaScript中函数定义时参数不使用 var 关键字。
+1. JavaScript中函数定义时参数不使用 var 关键字，返回值也不需要声明。
 
-   在Java中，我们定义一个方式时如果需要参数，那么在定义参数时必须指定数据类型，如：
+   在Java中，我们定义一个方式时如果需要参数，那么在定义参数时必须指定数据类型，而且必须指定函数的返回值，如：
 
    ```java
    public void toLearn(String name, String age){//参数必须使用关键字定义
@@ -574,10 +579,10 @@ var result = fun(1,3);
    }
    ```
 
-   但是在JavaScript中，由于其弱类型语言的特性，在定义函数时，可以不必使用 var 关键字修饰，如果你加了var 还会报错：
+   但是在JavaScript中，由于其弱类型语言的特性，在定义函数参数时，可以不使用 var 关键字修饰，如果你加了var 还会报错，函数返回值也不用声明：
 
    ```javascript
-   //不使用var
+   //不使用var,函数不必声明返回值，直接使用return返回需要返回的值即可
    var fun_novar = function(a,b){
    		//函数体
    }
@@ -590,6 +595,7 @@ var result = fun(1,3);
 2. JavaScript的函数是一个对象，对象又是一种变量，和变量的定义特点一样，如果定义了多个相同名称的函数，后面的函数会覆盖前面的函数定义，只会存在**一个**真正可用函数实例。
 
    ```javascript
+   //定义两个都为fun_same的函数，后者的函数内容会覆盖前者
    <script>
    				var fun_same = function(){
                document.write("same_front" + "<br/>");
@@ -609,7 +615,100 @@ var result = fun(1,3);
 
 3. **在JavaScript中，函数的调用只与方法的名称有关，和参数列表无关(重要)**
 
-   在Java等语言中，方法（函数）
+   在Java等语言中，方法（函数）在调用时如果需要传入参数，那么就必须将所有参数都传入，使用Java定义一个方法：
+   
+   ```java
+   private int add(int a, int b){
+           return a + b;
+   }
+   ```
+   
+   在调用时必须将需要的两个参数传入：
+   
+   ```java
+   //必须传入参数
+   add(1,2);
+   //不传入则报错找不到方法
+   add();
+   ```
+   
+   当然有人可能想起来了，在Java中提供了函数重载的功能，可以定义一个相同函数名，不同参数列表的函数来实现同一函数多种功能。但是这也说明了在Java等语言中，确定调用的方法（函数）是通过函数名 + 参数列表来实现的。
+   
+   
+   
+   不同于Java，在JavaScript中，函数的调用只与函数名有关，函数在定义时规定的参数列表只是函数的期待值而已。
+   
+   也就是说，JavaScript的函数在调用时不用遵循该函数定义时规定的参数列表，可以不传参数，也可以传超出个数的参数，都不会出错。
+   
+   请看例子：
+   
+   ```javascript
+   <script>
+   				//3. 在JavaScript中，函数的调用只与方法的名称有关，和参数列表无关(重要)
+           var fun_agru1 = function(a,b,c){
+   
+               document.write(a +"**" + b + "**" + c + "<br/>");
+           }
+           fun_agru1(1,2,3);//将全部参数传入
+           fun_agru1(1);//只传入两个参数
+           fun_agru1();//不传任何参数
+           fun_agru1(1,2,3,4);//传入超出函数需要的参数个数
+   </script>
+   
+   /*
+   输出结果：
+   1**2**3
+   1**undefined**undefined
+   undefined**undefined**undefined
+   1**2**3
+   */
+   ```
+   
+   在这个例子中，我定义了一个函数，功能为打印传入的参数值，从输出结果中可以看到，四种不同参数个数的调用方式都成功打印了结果。
+   
+   当传入的参数足够时，参数值全部被打印，多余的参数未使用但是不会影响函数执行。
+   
+   当参数不够时，函数在执行时将未赋值的参数视为未定义的，而在JavaScript中未定义则代表值为`undefined`，所以第二、第三个调用未接收到参数值的参数都打印了`undefined`。
+   
+   
+   
+   4.**在函数声明中有一个隐藏的内置对象arguments（数组），封装了所有传入的实际参数（重要）**
+   
+   在第三个特点的介绍中，我们介绍了JavaScript中的函数调用时能够接收的实参是不受限制的，当参数个数不够时，未传入实参的形参值为`undefined`。那么当传入的实参超过需求时，多余的参数又到哪里去了呢？
+   
+   在JavaScript的函数中，有一个arguments对象，其本质是一个数组，包含了所有该函数接收到的实参。所有的参数按照调用函数时定义的次序存储在argments数组中，上面多余的参数就在这个数组里。
+   
+   请看例子：
+   
+   ```javascript
+           var fun_agru1 = function(a,b,c){
+               document.write(arguments.length + "<br/>");         
+               document.write(arguments[0] + "**"); 
+               document.write(arguments[1] + "**"); 
+               document.write(arguments[2] + "**"); 
+               document.write(arguments[3]);
+               document.write("<br/>");
+           }
+           fun_agru1(1,2,3,4);//传入超出函数需要的参数个数
+   				
+   
+   
+   /*
+   输出结果：
+   4
+   1**2**3**4
+   */
+   ```
+   
+   从打印的结果中可以看到，arguments对象里面存储了所有的该函数传入的实参，而且按照次序存储在数组中。
+   
+   其中 length 属性为arguments数组的长度，也就是接收到参数的个数。
+   
+   arguments[0] 对应 第一个参数 1，argument[1]对应第二个参数 2 ......等等。
+   
+   
+   
+   
 
 #### 6.3 函数的属性
 

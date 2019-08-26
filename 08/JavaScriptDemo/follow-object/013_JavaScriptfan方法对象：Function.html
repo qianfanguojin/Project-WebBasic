@@ -48,7 +48,8 @@
         */
         document.write("方法的特点<br/>");   
         //1. JavaScript中函数定义时参数不使用var 关键字。
-        //不使用var
+
+        //参数不使用var
         var fun_novar = function(a,b){
                 //函数体
         }
@@ -62,6 +63,37 @@
             document.write("same_back" + "<br/>");
         }
         fun_same(); //输出same_back
+
+        //3. 在JavaScript中，函数的调用只与方法的名称有关，和参数列表无关(重要)
+        var fun_agru1 = function(a,b,c){
+
+            document.write(a +"**" + b + "**" + c + "<br/>");
+        }
+        fun_agru1(1,2,3);//将全部参数传入
+        fun_agru1(1);//只传入两个参数
+        fun_agru1();//不传任何参数
+        fun_agru1(1,2,3,4);//传入超出函数需要的参数个数
+
+        //4. 在函数声明中有一个隐藏的内置对象arguments（数组），封装了所有传入的实际参数（重要）。
+        var fun_agru2 = function(a,b,c){
+            document.write(arguments.length + "<br/>");
+            document.write(arguments[0] + "**"); 
+            document.write(arguments[1] + "**"); 
+            document.write(arguments[2] + "**"); 
+            document.write(arguments[3]);
+            document.write("<br/>");
+        }
+        fun_agru2(1,2,3,4);//传入超出函数需要的参数个数
+        
+        var fun_arg_demo = function(){
+            var sum = 0;
+            for(var i = 0 ; i < arguments.length ; i++){
+                sum+=arguments[i];
+            }
+            return sum;
+        }
+        var result_arg_demo = fun_arg_demo(10,20,30,40);
+        document.write(result_arg_demo + "<br/>");
         /*
         04.方法的属性
         */
