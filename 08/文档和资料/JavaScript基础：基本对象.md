@@ -508,10 +508,63 @@ Math.random();
 
 #### 5.1 全局对象中的一些方法
 
+##### 5.1.1 编解码
+
+在浏览器的数据传输中，为了让数据在传输的时候更稳定和高效，数据在传输时会被编码，接收时会被解码，在默认情况下，数据提交时在服务器上编码。但是有时候我们会需要自己手动编码一次。
+
 1. encodeURI()。
+
+   功能：将一段字符串编码为UTF-8格式，编码的字符一定，并返回编码后的字符串。
+
+   示例：
+
+   ```javascript
+   <script>
+           var code_eu1 = "千帆过烬";
+           document.write(encodeURI(code_eu1) + "<br/>");
+           //编码部分重要的字符，有些字符不被编码，如 "?"" 和 ":"" 
+           var code_eu2 = "http://baidu.com/wd?千帆过烬";
+           document.write(encodeURI(code_eu2) + "<br/>");
+   </script>
+   
+   
+   /*
+   输出结果：
+   %E5%8D%83%E5%B8%86%E8%BF%87%E7%83%AC
+   http://baidu.com/wd?%E5%8D%83%E5%B8%86%E8%BF%87%E7%83%AC
+   */
+   ```
+
+   如注释中所提到的，encodeURI() 可以实现对字符串的编码，编码的字符有限制，如链接中的`：` 和 `？`都没有被编码。这也是经常使用的编码方式，可以让我们清楚的看出地址信息。
+
 2. decodeURI()。
-3. encodeURIComponent()。
-4. decodeURIComponent()。
+
+   功能：相反的，decodeURI() 就是用来解码被 encodeURI() 编码后的字符串
+
+   示例：
+
+   ```javascript
+   <script>
+   				var code_du1 = decodeURI("%E5%8D%83%E5%B8%86%E8%BF%87%E7%83%AC");
+           document.write(code_du1 + "<br/>");
+           //解码时也不对 "?" 和 ":" 进行操作
+           var code_du2 = decodeURI("http://baidu.com/wd?%E5%8D%83%E5%B8%86%E8%BF%87%E7%83%AC");
+           document.write(code_du2 + "<br/>");
+   </script>
+   
+   /*
+   输出结果：
+   千帆过烬
+   http://baidu.com/wd?千帆过烬
+   */
+   ```
+
+   解码就不多赘述了，使用起来很简单。
+
+##### 5.1.2 编解码更多字符
+
+1. encodeURIComponent()。
+2. decodeURIComponent()。
 
 ---
 

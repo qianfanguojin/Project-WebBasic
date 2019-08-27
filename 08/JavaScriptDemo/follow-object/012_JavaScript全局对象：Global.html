@@ -6,8 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Global对象</title>
     <script>
+        /*
+        01. 编解码
+        */
+        document.write("编解码<br/>");
+        //1.encodeURI 编码
+        var code_eu1 = encodeURI("千帆过烬");
+        document.write(code_eu1 + "<br/>");
+        //编码部分重要的字符，有些字符不被编码，如 "?"" 和 ":"" 
+        var code_eu2 = encodeURI("http://baidu.com/wd?千帆过烬");
+        document.write(code_eu2 + "<br/>");
+
+        //2. encodeURI 解码
+        var code_du1 = decodeURI(code_eu1);
+        document.write(code_du1 + "<br/>");
+        //解码时也不对 "?" 和 ":" 进行操作
+        var code_du2 = decodeURI(code_eu2);
+        document.write(code_du2 + "<br/>");
+
         
-    
     </script>
 </head>
 <body>
