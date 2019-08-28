@@ -1,5 +1,7 @@
 ## 前言
 
+在JavaScript中，提供了许多的内置对象来方便我们更高效的编写代码，今天我们就来介绍一下它们的使用方法。
+
 ## 基本对象介绍
 
 ### 1. Array数组对象
@@ -164,35 +166,33 @@ Array 对象用于在单个的变量中存储多个值，也称数组。
 
 2. push()方法
 
-   
-
    功能：向数组的末尾添加一个或更多元素，并返回新的长度。
 
    使用方法：
 
    ```javascript
-   数组名.push(参数element1,参数element2.....);
+数组名.push(参数element1,参数element2.....);
    ```
-
+   
    示例：
 
    ```javascript
-   				//2.push()方法，向数组的末尾添加一个或多个元素，并返回新的长度。
+				//2.push()方法，向数组的末尾添加一个或多个元素，并返回新的长度。
            var arr7 = ["p","u","s","h"];
            document.write(arr7 + "<br/>");
            //可同时添加多个元素,返回添加元素后数组的长度
            document.write(arr7.push("p","o","p") + "<br/>");
            document.write(arr7);
    ```
-
+   
    输出结果：
 
    ```javascript
-   p,u,s,h
+p,u,s,h
    7
    p,u,s,h,p,o,p
    ```
-
+   
    想了解Array中的更多方法的用法，请移步 [W3C-Array 对象方法](https://www.w3school.com.cn/jsref/jsref_obj_array.asp)
 
 #### 1.5 Array 数组对象总结
@@ -268,6 +268,8 @@ var date = new Date();
    ```javascript
    1566549929455
    ```
+   
+   想了解Date中的更多方法的用法，请移步[W3C-Date 对象方法](https://www.w3school.com.cn/jsref/jsref_obj_date.asp)
 
 ---
 
@@ -308,6 +310,12 @@ Math.random();
 
 1. random()。
 
+   使用方法：
+
+   ```javascript
+   Math.random();
+   ```
+
    功能：返回一个 0 ~ 1 之间的随机数，含0不含1。
 
    生成并输出一个 0 ~ 10  之间的随机数：
@@ -320,39 +328,66 @@ Math.random();
 
    功能：向上取整计算，返回的是大于或等于函数参数，并且与之最接近的整数。
 
+   使用方法：
+
+   ```javascript
+   Math.ceil(x);//x为一个数值
+   ```
+
    获取大于 3.3 且与之最接近的整数：
 
    ```javascript
    document.write(Math.ceil(3.3) + "<br/>");
+   
+   /*
+   输出结果：
+   4
+   */
    ```
 
 3. floor()。
 
    功能：向下取整运算，返回的是小于或等于函数参数，并且与之最接近的整数。
 
+   使用方法：
+
+   ```javascript
+   Math.floor(x)；//x为一个数值
+   ```
+
    获取小于 5.3 且与之最接近的整数：
 
    ```javascript
    document.write(Math.floor(5.3) + "<br/>");
+   
+   /*
+   输出结果：
+   5
+   */
    ```
 
 4. round()。
 
-   功能：向下取整运算，返回的是小于或等于函数参数，并且与之最接近的整数。
+   功能：四舍五入取整运算。返回的是函数参数经过四舍五入运算后的整数值。
+
+   使用方法：
+
+   ```javascript
+   Math.round(x);//x为一个数值
+   ```
 
    获取小于 5.3 且与之最接近的整数：
 
    ```javascript
     document.write(Math.round(7.3) + "<br/>");
+   
+   /*
+   输出结果：
+   7
+   */
    ```
 
-上面的函数实例输出结果汇总：
-
-```javascript
-4
-5
-7
-```
+   想了解Math中的更多方法的用法，请移步[W3C-Math 对象方法](https://www.w3school.com.cn/jsref/jsref_obj_math.asp)
 
 #### 3.4 Math对象小练习
 
@@ -466,6 +501,14 @@ Math.random();
 
    功能：验证指定的字符串是否符合正则定义的规范，返回一个boolean值。
 
+   使用方法：
+
+   ```javascript
+   正则表达式对象.test(String);//String 为需要验证的字符串
+   ```
+
+   
+
    匹配字符串中是否符合正则表达式`^abc`
 
    ```javascript
@@ -478,13 +521,17 @@ Math.random();
 
    由于字符串开头为abc，返回的结果为 `true`
 
-   
-
-   
-
 2. exec()。
 
    功能：寻找指定的字符串是否存在符合正则定义的规范的文本，返回寻找到的文本。
+
+   使用方法：
+
+   ```javascript
+   正则表达式对象.exec(String);//String 为待被寻找的字符串
+   ```
+   
+   
 
    寻找字符串中是否有`app`字符串：
 
@@ -493,10 +540,12 @@ Math.random();
    var reg = /app/;
    reg.exec(str);
    ```
-
+   
    结果：
-
+   
    由于字符串中存在`app`字符串，返回的结果为字符串`app`
+
+想了解JavaScript中RegExp正则表达式中的更多方法的用法，请移步[W3C-RegExp 对象方法](https://www.w3school.com.cn/jsref/jsref_obj_regexp.asp)
 
 ---
 
@@ -515,6 +564,14 @@ Math.random();
 1. encodeURI()。
 
    功能：将一段字符串编码为UTF-8格式，编码的字符一定，并返回编码后的字符串。
+
+   使用方法：
+
+   ```javascript
+   encodeURI(String);//String 为待编码的字符串
+   ```
+
+   
 
    示例：
 
@@ -541,8 +598,16 @@ Math.random();
 
    功能：相反的，decodeURI() 就是用来解码被 encodeURI() 编码后的字符串
 
-   示例：
+   使用方法：
 
+   ```javascript
+   decodeURI(String);//String 为待解码的字符串
+   ```
+   
+   
+   
+   示例：
+   
    ```javascript
    <script>
    				var code_du1 = decodeURI("%E5%8D%83%E5%B8%86%E8%BF%87%E7%83%AC");
@@ -550,7 +615,7 @@ Math.random();
            //解码时也不对 "?" 和 ":" 进行操作
            var code_du2 = decodeURI("http://baidu.com/wd?%E5%8D%83%E5%B8%86%E8%BF%87%E7%83%AC");
            document.write(code_du2 + "<br/>");
-   </script>
+</script>
    
    /*
    输出结果：
@@ -558,19 +623,118 @@ Math.random();
    http://baidu.com/wd?千帆过烬
    */
    ```
-
-   解码就不多赘述了，使用起来很简单。
+   
 
 ##### 5.1.2 编解码更多字符
 
+在上面的encodeURI()编解码方法之中，`?` 和 `:` 字符是不被编码的，为了编解码这些URI之间的分隔符，引入了以下两个方法：
+
 1. encodeURIComponent()。
 2. decodeURIComponent()。
+
+这两个方法的用法和上面的方法一样，只是编解码的字符多一点而已，不过要记得使用什么方法编码，就要使用对应的方法解码，避免出现乱码的情况：
+
+看例子：
+
+```javascript
+<script>
+				//1.encodeURIComponent 编码
+        var code_euc1 = encodeURIComponent("千帆过烬");
+        document.write(code_euc1 + "<br/>");
+        //编码更多字符，编码URI组件，将URI之间的分隔符如 "?"" 和 ":"" 编码
+        var code_euc2 = encodeURIComponent("http://baidu.com/wd?千帆过烬");
+        document.write(code_euc2 + "<br/>");
+
+        //2. encodeURIComponent 解码
+        var code_duc1 = decodeURIComponent(code_euc1);
+        document.write(code_duc1 + "<br/>");
+        //解码对 "?" 和 ":" 也进行操作
+        var code_duc2 = decodeURIComponent(code_euc2);
+        document.write(code_duc2 + "<br/>");
+</script>
+
+/*
+输出结果：
+%E5%8D%83%E5%B8%86%E8%BF%87%E7%83%AC
+http%3A%2F%2Fbaidu.com%2Fwd%3F%E5%8D%83%E5%B8%86%E8%BF%87%E7%83%AC
+千帆过烬
+http://baidu.com/wd?千帆过烬
+*/
+```
+
+具体的描述注释以及代码中已经说明了，我就不再赘述了。
+
+
+
+##### 5.1.3 字符串转数字
+
+1. parseInt() 
+
+   功能：解析一个字符串的数字内容，返回该数字内容。
+
+   使用方法：
+
+   ```javascript
+   parseInt(String,radix);
+   ```
+
+   | 参数   | 描述                                                         |
+   | :----- | :----------------------------------------------------------- |
+   | string | 必需。要被解析的字符串。                                     |
+   | radix  | 可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。 |
+
+   说明：parseInt()方法会从左到右解析字符串，如果字符串第一个为数字，则返回数字内容，如 `parse(123abc)`返回`123` ，如果字符串第一个不为数字，则返回NaN，如`parseInt(abc123)` 返回NaN。
+
+##### 5.1.4 判定一个值是否为NaN
+
+1. isNaN()
+
+   功能：判断一个值的内容是否为NaN。
+
+   使用方法：
+
+   ```javascript
+   isNaN(x);//x为待检测的值
+   ```
+
+   说明：NaN在与任意值（包括其自身）进行`==` 比较时，都只会返回false，所以我们不能通过`x==NaN`判断一个值是否为NaN，于是引入了 isNaN() 方法来对数值是否为NaN进行判断。
+
+##### 5.1.5  计算某个字符串，并执行其中的的 JavaScript 代码。
+
+1. exval()
+
+   功能：计算某个字符串，并执行其中的的 JavaScript 代码（用的较少）。
+
+   使用方法：
+
+   ```javascript
+   eval(string);//string为含有要计算或执行的JavaScript语句字符串
+   ```
+
+   示例：
+
+   ```javascript
+   				eval("x=10;y=20;document.write(x*y + '<br/>')"); 
+           document.write(eval("2+2"));    
+   
+   /*
+   输出结果：
+   200
+   4
+   */
+   ```
+
+
+
+想了解JavaScript中Global全局对象中的更多方法的用法，请移步[W3C-Global](https://www.w3school.com.cn/jsref/jsref_obj_global.asp) 。
+
+   
 
 ---
 
 ### 6. Function函数对象
 
-Function对象用于描述一个函数（方法）
+Function对象在JavaScript中用于描述一个函数（方法）。
 
 在Java中，方法（函数）存在于类中，创建对象后是对象的一部分。而在JavaScript中，函数就是一个对象。
 
@@ -627,7 +791,7 @@ var result = fun(1,3);
    在Java中，我们定义一个方式时如果需要参数，那么在定义参数时必须指定数据类型，而且必须指定函数的返回值，如：
 
    ```java
-   public void toLearn(String name, String age){//参数必须使用关键字定义
+   public void toLearn(String name, String age){//参数必须使用数据类型关键字定义
    			//方法体
    }
    ```
@@ -635,10 +799,11 @@ var result = fun(1,3);
    但是在JavaScript中，由于其弱类型语言的特性，在定义函数参数时，可以不使用 var 关键字修饰，如果你加了var 还会报错，函数返回值也不用声明：
 
    ```javascript
-   //不使用var,函数不必声明返回值，直接使用return返回需要返回的值即可
+   //不使用var,只使用参数名即可，函数也不必声明返回值，直接使用return返回需要返回的值即可
    var fun_novar = function(a,b){
    		//函数体
    }
+   
    //使用var，会报错
    var fun_var = function(var a,var b){
    		//函数体
@@ -657,6 +822,7 @@ var result = fun(1,3);
            var fun_same = function(){
                document.write("same_back" + "<br/>");
            }
+           //调用函数
            fun_same(); 
    </script>
    

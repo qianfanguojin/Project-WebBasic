@@ -24,7 +24,51 @@
         var code_du2 = decodeURI(code_eu2);
         document.write(code_du2 + "<br/>");
 
+
+        /*
+        02.编解码更多字符
+        */
+        document.write("编解码更多字符<br/>");
+        //1.encodeURIComponent 编码
+        var code_euc1 = encodeURIComponent("千帆过烬");
+        document.write(code_euc1 + "<br/>");
+        //编码更多字符，编码URI组件，将URI之间的分隔符如 "?"" 和 ":"" 编码
+        var code_euc2 = encodeURIComponent("http://baidu.com/wd?千帆过烬");
+        document.write(code_euc2 + "<br/>");
+
+        //2. encodeURIComponent 解码
+        var code_duc1 = decodeURIComponent(code_euc1);
+        document.write(code_duc1 + "<br/>");
+        //解码对 "?" 和 ":" 也进行操作
+        var code_duc2 = decodeURIComponent(code_euc2);
+        document.write(code_duc2 + "<br/>");
+
+        /*
+        03. parseInt() 字符串转数字
+        */
+        document.write("字符串转数字<br/>");
+        document.write(parseInt("12345") + "<br/>");
+        document.write(parseInt("123abc") + "<br/>");
+        document.write(parseInt("abc123") + "<br/>");
+        document.write(parseInt("abc de") + "<br/>");
+
+        /*
+        04. isNaN() 判定一个值是否为NaN
         
+        */
+        document.write("判断一个值是否为NaN<br/>");
+        document.write((123 == NaN) + "<br/>");
+        document.write((NaN == NaN) + "<br/>");
+        document.write(isNaN(123) + "<br/>");
+        document.write(isNaN(NaN) + "<br/>");
+        
+        /*
+        05. exval() 计算某个字符串，并执行其中的的 JavaScript 代码。
+        */
+        document.write("字符串可执行NaN<br/>");
+        //字符串中的内容为JavaScript执行代码
+        eval("x=10;y=20;document.write(x*y + '<br/>')"); 
+        document.write(eval("2+2"));    
     </script>
 </head>
 <body>
