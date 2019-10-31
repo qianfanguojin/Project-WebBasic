@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>点击切换图片</title>
+</head>
+<body>
+
+    <img id="img" width="400x" height="400px" src="./img/01.jpg">
+</body>
+
+<script>
+
+    //获取id值为img的标签(元素)
+    var eleImg = document.getElementById("img");
+    //设定一个标志变量用来循环切换图片
+    var flag = false;
+    eleImg.onclick = function(){
+        if(flag){ //flag为true ，此时显示的为第二张图片，点击切换到第一张
+            eleImg.src = "./img/01.jpg";
+            flag = false;
+        }else{  //flag 为false，此时显示的是第一张图片，点击切换到第二张
+            eleImg.src = "./img/02.jpg";
+            flag = true;
+        }
+    }
+    
+    
+
+</script>
+</html>
