@@ -5,10 +5,22 @@
     <meta charset="UTF-8">
     <title>Windowd对象</title>
 
-    <script>
+
+</head>
+
+<body>
+    <!-- <input type="button" id="btn" value="打开新窗口">
+    <input type="button" id="btnc" value="关闭打开的窗口"> -->
+
+
+</body>
+<script>
+        //alert方法演示
         // window.alert("window弹出");
         // alert("no window 弹出");
 
+
+        //confirm方法演示
         // confirm("确定这样做吗？");
         // var flag = confirm("确定这样做吗？");
         // if (flag) {
@@ -17,13 +29,24 @@
         //     alert("不");
         // }
 
-        var text = prompt("输入点东西吧");
-        alert(text);
+        //prompt方法演示
+        // var text = prompt("输入点东西吧");
+        // alert(text);
+
+        //open方法演示
+        // var eleBtn = document.getElementById("btn");
+        // var newwindow;
+        // eleBtn.onclick = function(){
+        //     newwindow = window.open("http://www.baidu.com");
+
+        // }
+        // //close用法
+        // var eleBtnc = document.getElementById("btnc");
+        // eleBtnc.onclick = function(){
+        //     newwindow.close();
+        // }
+        
+        //在3秒后弹出一个警告框
+        setTimeout("alert('lololol');",3000);
     </script>
-</head>
-
-<body>
-
-</body>
-
 </html>
