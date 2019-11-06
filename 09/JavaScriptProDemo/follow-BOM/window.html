@@ -47,6 +47,8 @@
         // }
         
         //在3秒后弹出一个警告框
-        setTimeout("alert('lololol');",3000);
+         var id = setTimeout("alert('lololol');",3000);
+        //取消该弹出操作
+        clearTimeout(id);
     </script>
 </html>
