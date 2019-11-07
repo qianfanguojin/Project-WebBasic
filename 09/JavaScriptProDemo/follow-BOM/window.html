@@ -47,8 +47,14 @@
         // }
         
         //在3秒后弹出一个警告框
-         var id = setTimeout("alert('lololol');",3000);
+        //  var id = setTimeout("alert('lololol');",3000);
         //取消该弹出操作
-        clearTimeout(id);
+        // clearTimeout(id);
+        
+        //每过2s向html文档中写入数字2
+        var id = setInterval("document.write('2');",2000);
+        //过4s后取消循环写入数字2操作
+        setTimeout("clearInterval(id);",4000);
+    
     </script>
 </html>
