@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>location对象</title>
+</head>
+<body>
+    
+    <input type="button" value="assign" id="assign">
+    <input type="button" value="reload" id="reload">
+    <input type="button" value="replace" id="replace">
+
+    <input type="button" value="href获取" id="href01">
+    <input type="button" value="href设置" id="href02">
+</body>
+
+<script>
+    /**
+     * assign()方法
+     * 加载新文档,参数为URL地址，会产生历史记录
+     */
+   
+    document.getElementById("assign").onclick = function(){
+        location.assign("http://www.baidu.com");
+    } 
+    /**
+     * reload()方法 
+     * 重新加载文档，参数为一个布尔值，默认为false
+     * 1.如该方法没有设定参数值或设定为false，那该方法会使用
+     * 浏览器缓存来重新加载页面
+     * 2.如该方法参数值为true，那么该方法会无条件向服务器重新下载
+     * 该文档并重新加载
+     * 
+     */ 
+    document.getElementById("reload").onclick = function(){
+        location.reload(true);
+    }
+    
+
+    /**
+     * replace()方法
+     * 替换当前文档，和 assign 方法类似 
+     * 但是不会产生历史记录，也就是无法通过后退键返回上一个页面
+     */
+    document.getElementById("replace").onclick = function(){
+        location.replace("http://www.baidu.com");
+    }
+    
+
+    /**
+     * href 属性
+     * 设置或返回完整URL
+     * 当其设置一个新href时，其效果和assign()一样，加载新URL，并产生历史记录
+     */
+    document.getElementById("href01").onclick = function(){
+        alert(location.href);
+    }
+
+    document.getElementById("href02").onclick = function(){
+        location.href = "http://www.baidu.com";
+    }
+
+
+</script>
+</html>

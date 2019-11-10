@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>history对象</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">打开一个页面</a>
+    <input type="button" value="goForward前进" onclick="goForward()">
+    <input type="button" value="goBack后退" onclick="goBack()">
+    <input type="button" value="go去后一个页面" onclick="go()">
+    <input type="button" value="获取历史记录数量" onclick="getLength()">
+</body>
+<script>
+
+    /**
+     * forward()方法
+     * 加载当前窗口历史列表的前一个页面
+     * 类似于浏览器中的前进按钮
+     * 
+     */ 
+    function goForward() {
+        history.forward();
+    }
+
+    /**
+     * back()方法
+     * 加载当前窗口历史列表的后一个页面
+     * 类似于浏览器中的后退按钮
+    */
+    function goBack() {
+        history.back();
+    }
+    
+    /**
+     * go()方法
+     * 加载当前窗口历史列表的一个具体页面
+     * 参数可以为一个URL或者一个数字，数字代表要访问的URL在历史记录的相对位置
+     */ 
+    function go() {
+        //-1表示向后一个页面
+        history.go(-1);
+    }
+
+    /**
+     *length属性
+     * 显示当前窗口历史记录数量
+     */ 
+    function getLength() {
+        alert(history.length);
+    }
+</script>
+</html>
